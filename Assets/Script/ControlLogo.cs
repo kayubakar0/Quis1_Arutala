@@ -11,7 +11,7 @@ public class ControlLogo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //touch screen to rotate logo in y axis only
+        //touch screen to rotate object
         if (Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);
@@ -23,7 +23,7 @@ public class ControlLogo : MonoBehaviour
             }
         }
 
-        //pinch to change object scale without chnage location
+        //pinch to change object scale
         if (Input.touchCount == 2)
         {
             Touch touchZero = Input.GetTouch(0);
@@ -45,13 +45,6 @@ public class ControlLogo : MonoBehaviour
                 var factor = currentDistance / initialDistance;
                 objek.transform.localScale = initialScale * factor;
             }
-
-            // Vector2 touchZeroPrevPos = touchZero.position - touchZero.deltaPosition;
-            // Vector2 touchOnePrevPos = touchOne.position - touchOne.deltaPosition;
-            // float prevTouchDeltaMag = (touchZeroPrevPos - touchOnePrevPos).magnitude;
-            // float touchDeltaMag = (touchZero.position - touchOne.position).magnitude;
-            // float deltaMagnitudeDiff = prevTouchDeltaMag - touchDeltaMag;
-            // transform.localScale += new Vector3(deltaMagnitudeDiff * 0.01f, deltaMagnitudeDiff * 0.01f, deltaMagnitudeDiff * 0.01f); 
         }
         
         
